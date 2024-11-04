@@ -18,7 +18,7 @@ const goodbye = (jmeno) => {
 
 
 fillSubject('Důležité oznámení'); 
-fillBody('Toto je tělo e-mailu, které obsahuje důležité informace.', 'Pavel Nový');*/
+fillBody('Toto je tělo e-mailu, které obsahuje důležité informace.', 'Pavel Nový');
 
 const convertToCZK = (amount, currencyCode) => {
     const exchangeRates = {
@@ -43,4 +43,21 @@ document.body.innerHTML += convertToCZK(25, 'EUR');
 document.body.innerHTML += `<br>${convertToCZK(50, 'GBP')}`; 
 document.body.innerHTML += `<br>${convertToCZK(100, 'USD')}`; 
 document.body.innerHTML += `<br>${convertToCZK(0.01, 'BTC')}`; 
-document.body.innerHTML += `<br>${convertToCZK(100, 'BGH')}`; 
+document.body.innerHTML += `<br>${convertToCZK(100, 'BGH')}`; */
+
+
+const fillcut = (str, len) => {
+    if (len < 0) {
+        return null;
+    }
+
+    if (str.length > len) {
+        return str.slice(0, len);
+    } else if (str.length < len) {
+        return '.'.repeat(len - str.length) + str;
+    } else {
+        return str;
+    }
+};
+
+document.body.innerHTML += fillcut('petr', 8) + '<br>';
